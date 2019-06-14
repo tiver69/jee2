@@ -1,0 +1,50 @@
+	.carTable {
+		width: 600px; !important;
+		margin: auto;
+		border-collapse: collapse;
+		border: solid 1px;
+	}
+
+	tr, th, td {
+   		border: solid 1px;
+	}
+
+	td {
+		text-indent: 3%;
+	}
+
+	input.BlueButton, input.RedButton{
+		width: 70%;
+		margin-left: 12%;
+	}
+
+	input.greenButton, input.RedButton.smallButton, input.BlueButton.smallButton {
+    	background-color: rgb(199, 231, 185);
+		width: 120px;
+   		height: 30px;
+    	margin: 10px;
+	}
+
+	input.BlueButton, input.BlueButton.smallButton {
+       	background-color: rgb(188, 199, 218);
+    }
+
+    input.RedButton, input.RedButton.smallButton {
+       	background-color: rgb(235, 209, 209);
+    }
+
+
+	.form-group {
+   		width: 100%;
+    	float: left;
+    	margin-bottom: 5px;
+	}
+	label.control-label.col-sm-4{
+		float: left;
+		margin-right: 5px;
+		width: 15%;
+	}
+
+	.form-control{
+   		text-align: center;
+	}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Error 400</title>
+    <f:metadata>
+        <f:viewParam name="id" value="#{carBean.id}" required="true" />
+        <f:viewParam name="model" value="#{carBean.model}" required="true" />
+        <f:viewParam name="brand" value="#{carBean.brand}" required="true" />
+        <f:viewParam name="saveFlag" value="#{carBean.saveFlag}" required="true" />
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <center>
+        <h1>ERROR 400</h1>
+        <h3>FAIL TO EXECUTE</h3>
+        <h5>Illegal Argument Exception -
+        <h:outputText value="#{errorBean.setErrorMessage()}" />
+        </h5>
+    </center>
+</h:body>
+
+</html>
