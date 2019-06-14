@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:body>
+    <ui:composition>
+
+        <div class="form-group">
+            <h:outputLabel for="carBrand" class="control-label col-sm-4">Car Brand:</h:outputLabel>
+            <div class="col-sm-4">
+                <h:inputText id="carBrand" value="#{carBean.brand}" class="form-control" validatorMessage="User name is required">
+                    <f:validateRequired />
+                </h:inputText>
+            </div>
+        </div>
+        <div class="form-group">
+            <h:outputLabel for="carModel" class="control-label col-sm-4">Car Model:</h:outputLabel>
+            <div class="col-sm-4">
+                <h:inputText id="carModel" value="#{carBean.model}" class="form-control" validatorMessage="User name is required">
+                    <f:validateRequired />
+                </h:inputText>
+            </div>
+        </div>
+
+    </ui:composition>
+</h:body>
+</html>
