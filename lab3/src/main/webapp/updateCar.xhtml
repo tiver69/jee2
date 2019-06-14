@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:car="myTags">
+
+<h:head>
+    <title>Update Car</title>
+    <h:outputStylesheet name="style.css"/>
+    <f:metadata>
+        <f:viewParam name="id" value="#{carBean.id}" required="true" />
+        <f:viewParam name="model" value="#{carBean.model}" required="true" />
+        <f:viewParam name="brand" value="#{carBean.brand}" required="true" />
+    </f:metadata>
+</h:head>
+
+<h:body>
+    <h:form>
+        <h2><h:outputText value="UPDATE CAR WITH ID #{carBean.id}"/></h2>
+
+        <h:inputText id="carId" value="#{carBean.id}" style="display: none;"></h:inputText>
+        <!--<div class="form-group">-->
+            <!--<h:outputLabel for="carBrand" class="control-label col-sm-4">New Car Brand:</h:outputLabel>-->
+            <!--<div class="col-sm-4">-->
+                <!--<h:inputText id="carBrand" value="#{carBean.brand}" class="form-control" validatorMessage="User name is required">-->
+                    <!--<f:validateRequired />-->
+                <!--</h:inputText>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<h:outputLabel for="carModel" class="control-label col-sm-4">New Car Model:</h:outputLabel>-->
+            <!--<div class="col-sm-4">-->
+                <!--<h:inputText id="carModel" value="#{carBean.model}" class="form-control" validatorMessage="User name is required">-->
+                    <!--<f:validateRequired />-->
+                <!--</h:inputText>-->
+            <!--</div>-->
+        <!--</div>-->
+        <car:info></car:info>
+
+        <h:commandButton action = "#{carBean.updateCar(carBean.id)}" value = "UPDATE" class="greenButton"/>
+        <h:commandButton action = "carList.xhtml?faces-redirect=true" value = "RETURN" class="RedButton smallButton"/>
+    </h:form>
+</h:body>
+
+
+</html>
