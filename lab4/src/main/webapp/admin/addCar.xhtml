@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:car="myTags">
+
+<h:head>
+    <title>Add Car</title>
+    <h:outputStylesheet name="style.css"/>
+</h:head>
+<h:body>
+    <h:form>
+        <h2><h:outputText value="ADD YOUR CAR"/></h2>
+
+        <div class="form-group">
+            <h:outputLabel for="carId" class="control-label col-sm-4">Car ID:</h:outputLabel>
+            <div class="col-sm-4">
+                <h:inputText id="carId" value="#{carBean.id}" class="form-control" validatorMessage="User name is required">
+                    <f:validateRequired />
+                </h:inputText>
+            </div>
+        </div>
+        <!--<div class="form-group">-->
+            <!--<h:outputLabel for="carBrand" class="control-label col-sm-4">Car Brand:</h:outputLabel>-->
+            <!--<div class="col-sm-4">-->
+                <!--<h:inputText id="carBrand" value="#{carBean.brand}" class="form-control" validatorMessage="User name is required">-->
+                    <!--<f:validateRequired />-->
+                <!--</h:inputText>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<h:outputLabel for="carModel" class="control-label col-sm-4">Car Model:</h:outputLabel>-->
+            <!--<div class="col-sm-4">-->
+                <!--<h:inputText id="carModel" value="#{carBean.model}" class="form-control" validatorMessage="User name is required">-->
+                    <!--<f:validateRequired />-->
+                <!--</h:inputText>-->
+            <!--</div>-->
+        <!--</div>-->
+        <car:info/>
+
+        <div class="form-group">
+            <h:outputLabel for="userLogin" class="control-label col-sm-4">User Login:</h:outputLabel>
+            <div class="col-sm-4">
+                <h:selectOneMenu id="userLogin" value="#{carBean.userLogin}">
+                    <f:selectItems value="#{userBean.getAllUserLogins()}" />
+                </h:selectOneMenu>
+            </div>
+        </div>
+
+        <h:commandButton action = "#{carBean.saveCarAdmin()}" value = "SAVE" class="greenButton"/>
+        <h:commandButton action = "carList.xhtml?faces-redirect=true" value = "RETURN" class="RedButton smallButton"/>
+    </h:form>
+</h:body>
+</html>

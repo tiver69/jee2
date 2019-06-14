@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+    <title>Car List</title>
+    <h:outputStylesheet name="style.css"/>
+</h:head>
+<h:body>
+    <center><h2><h:outputText value="CARS"/></h2></center>
+    <h:form id="carForm">
+        <h:dataTable id="carTable" binding="#{table}" value="#{carListBean.getAllCars()}" var="car" class="carTable">
+            <h:column>
+                <f:facet name="header">Number</f:facet>
+                <h:outputText id="id" value="#{car.getId()}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Brand</f:facet>
+                <h:outputText id="brand" value="#{car.getBrand()}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Model</f:facet>
+                <h:outputText id="model" value="#{car.getModel()}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header">Owner</f:facet>
+                <h:outputText id="owner" value="#{car.getUser().login}" />
+            </h:column>
+            <h:column>
+                <f:facet name="header"/>
+                <h:commandButton action="#{carBean.toUpdatePage(car.getId())}" value="Update" class="BlueButton" />
+            </h:column>
+            <h:column>
+                <f:facet name="header"/>
+                <h:commandButton action="#{carBean.deleteCar(car.getId())}" value="Delete" class="RedButton" />
+            </h:column>
+        </h:dataTable>
+            <center>
+                <h:commandButton action = "/admin/addCar.xhtml?faces-redirect=true" value = "Add Car" class="greenButton"/>
+                <h:commandButton action = "/user/carList.xhtml?faces-redirect=true" value = "Your cars" class="BlueButton smallButton"/>
+                <h:commandButton action = "#{securityBean.logout()}" value = "LogOut" class="RedButton smallButton"/>
+            </center>
+    </h:form>
+</h:body>
+
+
+</html>
